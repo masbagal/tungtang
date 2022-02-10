@@ -1,13 +1,19 @@
+/** --- Browser check --- */
+const isMobile =
+  "ontouchstart" in document.documentElement &&
+  navigator.userAgent.match(/Mobi/);
 const isAbleToShare = Boolean(navigator.share);
-const queryString = new URLSearchParams(location.search);
-const initialDate = queryString.get("date");
 
+/* --- Element --- */
 const input = document.getElementById("date-input");
 const submit = document.getElementById("submit");
 const warning = document.getElementById("submit");
 const resultArea = document.getElementById("result");
 const shareBtn = document.getElementById("share");
+const installArea = document.getElementById("install-area");
+const installBtn = document.getElementById("install-button");
 
+/* --- Constants --- */
 const ONE_DAY = 1000 * 60 * 60 * 24;
 const THREE_DAYS = ONE_DAY * 3;
 const SEVEN_DAYS = ONE_DAY * 7;
@@ -15,6 +21,7 @@ const FORTY_DAYS = ONE_DAY * 40;
 const HUNDRED_DAYS = ONE_DAY * 100;
 const THOUSAND_DAYS = ONE_DAY * 1000;
 
+/** Service worker thingy */
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
     navigator.serviceWorker.register("/sw.js").then(
@@ -33,12 +40,36 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+/** ---- Initial Setup ----- */
+const queryString = new URLSearchParams(location.search);
+const initialDate = queryString.get("date");
 if (initialDate) {
   input.value = initialDate;
   submit.disabled = false;
   processDate();
 }
 
+/** --- Installation --- */
+let installPrompt;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  installPrompt = e;
+  // Update UI notify the user they can install the PWA
+  if (isMobile) {
+    installArea.classList.add("show");
+  }
+});
+
+installBtn.addEventListener("click", async () => {
+  installPrompt.prompt();
+});
+
+window.addEventListener("appinstalled", () => {
+  installArea.classList.remove("show");
+  installPrompt = null;
+});
+
+/** --- Form --- */
 function formatDate(timestamp) {
   const options = {
     weekday: "long",

@@ -56,6 +56,10 @@ thead td {
   text-align: right;
 }
 
+.show {
+  display: block;
+}
+
 #result.show {
   display: flex;
   align-items: center;
@@ -66,6 +70,8 @@ thead td {
   display: none;
 }
 
-#share.show {
-  display: block;
+#install-area {
+  margin-top: 3rem;
+  display: flex;
+  justify-items: center;
 }
