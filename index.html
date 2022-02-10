@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+    <link rel="stylesheet" href="./water.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <h1 class="hero">TungTang</h1>
+      <h2 class="hero2">Hitung Tanggal</h2>
+
+      <div class="spacer"></div>
+      <label>Masukkan Tanggal</label>
+      <div class="form">
+        <input id="date-input" type="date" />
+        <button disabled id="submit">Hitung</button>
+      </div>
+      <div id="warning"></div>
+      <div class="spacer"></div>
+      <div id="result">
+        <table id="result-table">
+          <thead>
+            <td>Periode</td>
+            <td>Tanggal</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hari yang dipilih</td>
+              <td id="hari-1" class="hari"></td>
+            </tr>
+            <tr>
+              <td>3 hari</td>
+              <td id="hari-3" class="hari"></td>
+            </tr>
+            <tr>
+              <td>7 hari</td>
+              <td id="hari-7" class="hari"></td>
+            </tr>
+            <tr>
+              <td>40 hari</td>
+              <td id="hari-40" class="hari"></td>
+            </tr>
+            <tr>
+              <td>100 hari</td>
+              <td id="hari-100" class="hari"></td>
+            </tr>
+            <tr>
+              <td>1000 hari</td>
+              <td id="hari-1000" class="hari"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="spacer"></div>
+        <button id="share">💬 Bagikan hasil</button>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
