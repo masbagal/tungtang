@@ -52,15 +52,16 @@ if (initialDate) {
 /** --- Installation --- */
 let installPrompt;
 window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  installPrompt = e;
-  // Update UI notify the user they can install the PWA
   if (isMobile) {
+    e.preventDefault();
+    installPrompt = e;
+    // Update UI notify the user they can install the PWA
     installArea.classList.add("show");
   }
 });
 
-installBtn.addEventListener("click", async () => {
+installBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
   installPrompt.prompt();
 });
 
