@@ -1,7 +1,8 @@
 /** --- Browser check --- */
 const isMobile =
-  "ontouchstart" in document.documentElement &&
-  navigator.userAgent.match(/Mobi/);
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
 const isAbleToShare = Boolean(navigator.share);
 
 /* --- Element --- */
