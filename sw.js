@@ -1,4 +1,4 @@
-var CACHE_NAME = "appcache-2";
+var CACHE_NAME = "appcache-3";
 var urlsToCache = ["/", "/index.html", "/water.css", "/index.css", "/index.js"];
 
 self.addEventListener("install", function (event) {
