@@ -86,6 +86,13 @@ function formatDate(timestamp) {
 input.addEventListener("change", (e) => {
   const value = e.target.valueAsNumber;
   submit.disabled = !Boolean(value);
+
+  document.getElementById("hari-1").innerText = formatDate(value);
+  document.getElementById("hari-3").innerText = "--";
+  document.getElementById("hari-7").innerText = "--";
+  document.getElementById("hari-40").innerText = "--";
+  document.getElementById("hari-100").innerText = "--";
+  document.getElementById("hari-1000").innerText = "--";
 });
 
 share.addEventListener("click", () => {
@@ -102,6 +109,7 @@ function processDate() {
   if (isAbleToShare) {
     shareBtn.classList.add("show");
   }
+
   const date = input.valueAsNumber;
   resultArea.classList.add("show");
 
