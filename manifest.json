@@ -1,0 +1,32 @@
+{
+  "short_name": "TungTang",
+  "name": "TungTang - Hitung Tanggal",
+  "icons": [
+    {
+      "src": "/icons/16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/icons/32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/icons/192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#dc7ec5",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#dc7ec5",
+  "description": "Aplikasi web sederhana untuk menghitung tanggal perayaan meninggalnya seseorang"
+}
