@@ -15,6 +15,24 @@ const FORTY_DAYS = ONE_DAY * 40;
 const HUNDRED_DAYS = ONE_DAY * 100;
 const THOUSAND_DAYS = ONE_DAY * 1000;
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/sw.js").then(
+      function (registration) {
+        // Registration was successful
+        console.log(
+          "ServiceWorker registration successful with scope: ",
+          registration.scope
+        );
+      },
+      function (err) {
+        // registration failed :(
+        console.log("ServiceWorker registration failed: ", err);
+      }
+    );
+  });
+}
+
 if (initialDate) {
   input.value = initialDate;
   submit.disabled = false;
