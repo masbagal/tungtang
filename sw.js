@@ -1,7 +1,8 @@
-var CACHE_NAME = "cache-3.2";
+var CACHE_NAME = "cache-3.2.1";
 var urlsToCache = ["/", "/index.html", "/water.css", "/index.css", "/index.js"];
 
 self.addEventListener("install", function (event) {
+  self.skipWaiting();
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
