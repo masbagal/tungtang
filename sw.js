@@ -1,4 +1,4 @@
-var CACHE_NAME = "tungtang-cache1";
+var CACHE_NAME = "cache1";
 var urlsToCache = ["/", "/index.html", "/water.css", "/index.css", "/index.js"];
 
 self.addEventListener("install", function (event) {
