@@ -72,6 +72,10 @@ thead td {
 
 #install-area {
   margin-top: 3rem;
-  display: flex;
+  display: none;
   justify-items: center;
+}
+
+#install-area.show {
+  display: flex;
 }
