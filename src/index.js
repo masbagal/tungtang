@@ -16,11 +16,11 @@ const installBtn = document.getElementById("install-button");
 
 /* --- Constants --- */
 const ONE_DAY = 1000 * 60 * 60 * 24;
-const THREE_DAYS = ONE_DAY * 3;
-const SEVEN_DAYS = ONE_DAY * 7;
-const FORTY_DAYS = ONE_DAY * 40;
-const HUNDRED_DAYS = ONE_DAY * 100;
-const THOUSAND_DAYS = ONE_DAY * 1000;
+const THREE_DAYS = ONE_DAY * 3 - ONE_DAY;
+const SEVEN_DAYS = ONE_DAY * 7 - ONE_DAY;
+const FORTY_DAYS = ONE_DAY * 40 - ONE_DAY;
+const HUNDRED_DAYS = ONE_DAY * 100 - ONE_DAY;
+const THOUSAND_DAYS = ONE_DAY * 1000 - ONE_DAY;
 
 /** Service worker thingy */
 if ("serviceWorker" in navigator) {
