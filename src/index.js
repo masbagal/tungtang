@@ -25,19 +25,21 @@ const THOUSAND_DAYS = ONE_DAY * 1000;
 /** Service worker thingy */
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
-    navigator.serviceWorker.register(new URL("./sw.js", import.meta.url)).then(
-      function (registration) {
-        // Registration was successful
-        console.log(
-          "ServiceWorker registration successful with scope: ",
-          registration.scope
-        );
-      },
-      function (err) {
-        // registration failed :(
-        console.log("ServiceWorker registration failed: ", err);
-      }
-    );
+    navigator.serviceWorker
+      .register(new URL("sw.js", import.meta.url), { type: "module" })
+      .then(
+        function (registration) {
+          // Registration was successful
+          console.log(
+            "ServiceWorker registration successful with scope: ",
+            registration.scope
+          );
+        },
+        function (err) {
+          // registration failed :(
+          console.log("ServiceWorker registration failed: ", err);
+        }
+      );
   });
 }
 
