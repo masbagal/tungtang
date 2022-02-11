@@ -1,0 +1,26 @@
+{
+  "name": "tungtang",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "description": "Sebuah aplikasi sangat sederhana untuk menghitung perayaan meninggalnya seseorang.",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masbagal/tungtang.git"
+  },
+  "author": "masbagal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masbagal/tungtang/issues"
+  },
+  "homepage": "https://github.com/masbagal/tungtang#readme",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.3.1",
+    "@parcel/transformer-webmanifest": "^2.3.1",
+    "parcel": "^2.3.1"
+  }
+}

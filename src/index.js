@@ -25,7 +25,7 @@ const THOUSAND_DAYS = ONE_DAY * 1000;
 /** Service worker thingy */
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
-    navigator.serviceWorker.register("/sw.js").then(
+    navigator.serviceWorker.register(new URL("./sw.js", import.meta.url)).then(
       function (registration) {
         // Registration was successful
         console.log(
