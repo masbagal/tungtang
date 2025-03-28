@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master] # Or your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: |
+          # Set NODE_OPTIONS to increase memory limit if needed
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          # Disable source maps to avoid the mappings.wasm error
+          npm run build -- --no-source-maps --public-url ./
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # The folder the build outputs to (adjust if needed)
+          branch: gh-pages
